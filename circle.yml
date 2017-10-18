@@ -2,7 +2,7 @@ machine:
   services:
     - docker
 
-dependices:
+dependencies:
   override:
     - docker pull mysql
     - docker build -t docker-api-devf .
