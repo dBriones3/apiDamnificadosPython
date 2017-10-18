@@ -10,4 +10,4 @@ dependices:
 
 test:
   override:
-    - docker run -it --link docker-mysql-2:mysql docker-api-devf sh tests.sh
+    - docker run -it --link docker-mysql-2:mysql docker-api-devf sh test.sh
