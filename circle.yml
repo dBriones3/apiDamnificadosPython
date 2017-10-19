@@ -4,10 +4,17 @@ machine:
 
 dependencies:
   override:
+    - bash setup-heroku.sh
     - docker pull mysql
     - docker build -t docker-api-devf .
     - docker run --name docker-mysql-2 -e MYSQL_ROOT_PASSWORD=Jessica1- -e MYSQL_DATABASE=damnificadosDB -d mysql
 
 test:
   override:
-    - docker run -it --link docker-mysql-2:mysql docker-api-devf sh test.sh
+    - docker run -it --link docker-mysql-2:mysql -e DJANGO_ENV=develoment docker-api-devf sh test.sh
+
+deployment:
+  qa:
+    branch: master
+    commands:
+      - sh deploy.sh
