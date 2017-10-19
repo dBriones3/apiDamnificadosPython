@@ -11,7 +11,7 @@ dependencies:
 
 test:
   override:
-    - docker run -it --link docker-mysql-2:mysql -e DJANGO_ENV=develoment docker-api-devf sh test.sh
+    - docker run -it --link docker-mysql-2:mysql -e DJANGO_ENV=development docker-api-devf sh test.sh
 
 deployment:
   qa:
